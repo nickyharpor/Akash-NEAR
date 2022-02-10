@@ -21,9 +21,9 @@ then
       neard $NEARD_FLAGS init --chain-id="testnet" ${ACCOUNT_ID:+--account-id=$ACCOUNT_ID} --download-genesis
       rm -f ${NEAR_HOME}/config.json
       echo "getting config..."
-      curl "https://s3-us-west-1.amazonaws.com/build.nearprotocol.com/nearcore-deploy/testnet/config.json" -o ${NEAR_HOME}/config.json
+      aria2c -x 4 -o ${NEAR_HOME}/config.json "https://s3-us-west-1.amazonaws.com/build.nearprotocol.com/nearcore-deploy/testnet/config.json"
       echo "getting data..."
-      curl "https://near-protocol-public.s3.ca-central-1.amazonaws.com/backups/testnet/rpc/data.tar" -o ${NEAR_HOME}/data.tar
+      aria2c -x 16 -o ${NEAR_HOME}/data.tar "https://near-protocol-public.s3.ca-central-1.amazonaws.com/backups/testnet/rpc/data.tar"
       mkdir -p ${NEAR_HOME}/data
       tar -xf ${NEAR_HOME}/data.tar -C ${NEAR_HOME}/data
       rm -f ${NEAR_HOME}/data.tar
@@ -32,9 +32,9 @@ then
       neard $NEARD_FLAGS init --chain-id="mainnet" ${ACCOUNT_ID:+--account-id=$ACCOUNT_ID} --download-genesis
       rm -f ${NEAR_HOME}/config.json
       echo "getting config..."
-      curl "https://s3-us-west-1.amazonaws.com/build.nearprotocol.com/nearcore-deploy/mainnet/config.json" -o ${NEAR_HOME}/config.json
+      aria2c -x 4 -o ${NEAR_HOME}/config.json "https://s3-us-west-1.amazonaws.com/build.nearprotocol.com/nearcore-deploy/mainnet/config.json"
       echo "getting data..."
-      curl "https://near-protocol-public.s3.ca-central-1.amazonaws.com/backups/mainnet/rpc/data.tar" -o ${NEAR_HOME}/data.tar
+      aria2c -x 16 -o ${NEAR_HOME}/data.tar "https://near-protocol-public.s3.ca-central-1.amazonaws.com/backups/mainnet/rpc/data.tar"
       mkdir -p ${NEAR_HOME}/data
       tar -xf ${NEAR_HOME}/data.tar -C ${NEAR_HOME}/data
       rm -f ${NEAR_HOME}/data.tar

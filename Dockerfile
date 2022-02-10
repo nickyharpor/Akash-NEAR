@@ -45,7 +45,7 @@ FROM ubuntu:18.04
 EXPOSE 3030 24567
 
 RUN apt-get update -qq && apt-get install -y \
-    libssl-dev ca-certificates curl \
+    libssl-dev ca-certificates aria2 \
     && rm -rf /var/lib/apt/lists/*
 
 COPY --from=build /tmp/build/* /usr/local/bin/
