@@ -57,9 +57,9 @@ You can find your validator key at `/srv/near/validator_key.json` inside the
 container. You can run
 `akash provider lease-shell --from <key-name> --dseq <dseq-number> --provider=<provider-address> near cat /srv/near/validator_key.json`
 with your own variables to access it. You may want to learn more about how to
-[execute a shell command](https://docs.akash.network/release-notes/v0.14.0#remote-shell-command-execution)
+[execute a shell command](https://akash.network/docs/network-features/deployment-shell-access/#remote-shell-command-execution)
 and how to
-[access shell](https://docs.akash.network/release-notes/v0.14.0#access-the-deployment-shell-cli)
+[access shell](https://akash.network/docs/network-features/deployment-shell-access/#access-the-deployment-shell-cli)
 on Akash deployments.
 
 ## Notes
