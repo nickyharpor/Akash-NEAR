@@ -46,7 +46,7 @@ if [[ -z ${ARCHIVE} ]]
 then
   echo "archiving is disabled."
 else
-  echo "setting up node is as archive..."
+  echo "setting up node as archive..."
   sed -i 's/"archive": false/"archive": true/g' ${NEAR_HOME}/config.json
 fi
 
